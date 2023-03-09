@@ -16,6 +16,3 @@ class Solution:
                 i += 1
         except IndexError:
             return output
-        
-a = Solution()
-print(a.longestCommonPrefix(["f","flow","flight"]))

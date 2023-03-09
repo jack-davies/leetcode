@@ -14,6 +14,3 @@ class Solution:
                 right -= 1
             best_area = max(best_area, (right - left) * min(height[left], height[right]))
         return best_area
-
-a = Solution()
-print(a.maxArea([1,2,4,3]))

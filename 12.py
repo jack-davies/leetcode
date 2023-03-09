@@ -14,6 +14,3 @@ class Solution:
         for i, char in enumerate(num):
             output += digits[i][int(char)]
         return output
-        
-a = Solution()
-print(a.intToRoman(1994))

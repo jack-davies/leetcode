@@ -11,8 +11,3 @@ class Solution:
         if output > 2147483647 or output < -2147483648:
             return 0
         return output
-        
-
-
-a = Solution()
-print(a.reverse(-2147483648))

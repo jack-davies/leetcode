@@ -15,6 +15,3 @@ class Solution:
                 output -= current
             prev = current
         return output
-        
-a = Solution()
-print(a.romanToInt("MCMXCIV"))

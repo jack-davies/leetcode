@@ -7,7 +7,7 @@ class Solution:
         keys = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
         prev = [""]
         current = []
-        
+
         for digit in digits:
             current = []
             for element in prev:
@@ -15,8 +15,5 @@ class Solution:
                 for i in range(len(keys[key])):
                     current.append(element + keys[key][i])
                 prev = current
-        
+
         return current
-            
-a = Solution()
-print(a.letterCombinations("23"))

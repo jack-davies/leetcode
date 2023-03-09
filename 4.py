@@ -6,7 +6,7 @@ class Solution:
         :type nums1: List[int]
         :type nums2: List[int]
         :rtype: float
-        """        
+        """
         def no_smaller_elements(x):
             l1_min = bisect.bisect_left(nums1, x)
             l2_min = bisect.bisect_left(nums2, x)
@@ -14,14 +14,14 @@ class Solution:
             l2_max = bisect.bisect_right(nums2, x)
             print("there are between", l1_min + l2_min, "and", l1_max + l2_max - 1, "elements smaller than", x)
             return l1_min + l2_min, l1_max + l2_max - 1
-        
+
         def search(l, total):
             if len(l) == 0:
                 return -1, None
-            
+
             lo = 0
             hi = len(l) - 1
-            
+
             offset = (total+1) % 2
             # print("offset", offset)
             while lo <= hi:
@@ -40,9 +40,9 @@ class Solution:
                     print("solution.", mid, min_diff, max_diff)
                     return mid, -(min(min_diff, max_diff, key=abs))
             return -1, None
-        
+
         total = len(nums1) + len(nums2)
-        
+
         element1, e1_diff = search(nums1, total)
         element2, e2_diff = search(nums2, total)
         print("first element", element1, "diff", e1_diff)
@@ -65,10 +65,3 @@ class Solution:
                 if element1 < len(nums1) - e1_diff and element2 < len(nums2) - e2_diff:
                     offset = min(nums1[element1 + e1_diff], nums2[element2 + e2_diff])
                 return (nums1[element1] + offset) / 2
-    
-a = [1,2]
-b = [1,2]
-
-c = Solution()
-print(c.findMedianSortedArrays(a,b))
-    

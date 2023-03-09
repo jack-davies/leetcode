@@ -9,17 +9,17 @@ class Solution:
         # no solution
         if len(nums) < 3:
             return []
-        
+
         # Any more than 3 occurrences of an int do not affect the solution
         counts = Counter(nums)
         nums = []
         for element in counts:
             nums += [element] * min(3, counts[element])
-        
+
         nums.sort()
         neg_c = [-element for element in nums]
         solutions = set()
-        
+
         # a + b = -c
         for i in range(len(neg_c)):
             target = neg_c[i]
@@ -35,16 +35,11 @@ class Solution:
                 else:
                     solutions.add(frozenset([-target, search[left], search[right]]))
                     right -= 1
-        
+
         # we now have the answer, just need to format
         solutions = list(solutions)
-        solutions = [list(solution) if len(solution) == 3 
-                     else list(solution) + [-sum(solution)] if len(solution) == 2 
+        solutions = [list(solution) if len(solution) == 3
+                     else list(solution) + [-sum(solution)] if len(solution) == 2
                      else [0,0,0] for solution in solutions]
-        
+
         return solutions
-        
-        
-        
-a = Solution()
-print(a.threeSum([0, 0, 0, 1, 2, -1, -1]))

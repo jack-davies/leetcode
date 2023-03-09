@@ -7,9 +7,9 @@ class Solution:
         """
         if len(nums) < 4:
             return []
-        
+
         nums.sort()
-        
+
         ab_sum = {}
         for _a in range(len(nums)):
             for _b in range(_a+1, len(nums)):
@@ -18,7 +18,7 @@ class Solution:
                     ab_sum[ab].append((_a, _b))
                 else:
                     ab_sum[ab] = ([(_a, _b)])
-        
+
         # a + b = target - (c + d)
         solutions = set()
         for _c in range(len(nums)):

@@ -17,4 +17,3 @@ class Solution:
                 j -= 1
             else:
                 return [order[i], order[j]]
-        
